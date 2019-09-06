@@ -55,7 +55,7 @@ public class MailServiceImpl implements MailService {
 
         try {
             //true表示需要创建一个multipart message
-            MimeMessageHelper helper = new MimeMessageHelper(message, true);
+            MimeMessageHelper helper = null;
             helper.setFrom("903907306@qq.com");
             helper.setTo(to);
             helper.setSubject(subject);
