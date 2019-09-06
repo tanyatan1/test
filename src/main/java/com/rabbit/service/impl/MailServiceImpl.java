@@ -39,7 +39,7 @@ public class MailServiceImpl implements MailService {
             mailSender.send(message);
             logger.info("简单邮件已经发送。");
         } catch (Exception e) {
-            logger.error("发送简单邮件时发生异常！", e);
+            
         }
 
     }
@@ -55,7 +55,7 @@ public class MailServiceImpl implements MailService {
 
         try {
             //true表示需要创建一个multipart message
-            MimeMessageHelper helper = new MimeMessageHelper(message, true);
+            MimeMessageHelper helper = null;
             helper.setFrom("903907306@qq.com");
             helper.setTo(to);
             helper.setSubject(subject);
@@ -93,7 +93,8 @@ public class MailServiceImpl implements MailService {
             logger.info("带附件的邮件已经发送。");
         } catch (MessagingException e) {
             logger.error("发送带附件的邮件时发生异常！", e);
-        }
+        } finally {
+		}
     }
 
 
